@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //一等公民函数
+        var foo1 = function () {
+            console.log(" foo")
+        }
+        foo1()
+        var foo2 = foo1
+        foo2()
+        function bar(fn) {
+            console.log(fn)
+            fn()
+        }
+        bar(foo1)
+
+        function sayHello(name) {
+            function Hi() {
+                console.log("hi" + name)
+            }
+            return Hi
+        }
+
+        var fn = sayHello("kobe")
+        fn()
+
+        var obj = {
+            name: "what",
+            eating: function () {
+                console.log("eating")
+            }
+        }
+        obj.eating()
+
+        var fns = [foo1, foo2, bar, sayHello]
+        console.log(fns)
+    </script>
+</body>
+
+</html>

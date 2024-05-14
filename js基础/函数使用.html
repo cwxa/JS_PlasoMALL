@@ -40,8 +40,11 @@
             console.log(height)
         }
         baz("Plaso", 12, 1.77)
+
         //语法糖，有点甜头
         //此处优化数字显示，便于观看0及其个数
+
+        console.log(formatCount(11_1111_1111_1111))//可以提前使用
         function formatCount(count) {
             var fmtCount = 0
             if (count > 10_0000_0000) {
@@ -59,6 +62,13 @@
         }
 
         console.log(formatCount(11111111111111))
+
+        //不能提前使用
+        //bar()
+        var bar = function () {
+            console.log("first")
+        }
+        bar()
 
     </script>
 </body>
