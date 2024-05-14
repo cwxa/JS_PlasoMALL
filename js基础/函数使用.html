@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //stackover flow:程序问答网站
+        //伪变量：foo函数,bar变量,baz文件
+
+        function sayHello() {
+            console.log("first")
+            alert("hello")
+        }
+        sayHello()
+
+        function PrintInfo(name, age, height) {
+            console.log(name)
+            console.log(age)
+            console.log(height)
+            console.log(arguments)
+        }
+        PrintInfo("Plaso", 12, 1.77)
+
+        function foo() {
+            console.log("foo")
+        }
+        var res = foo()
+        console.log(foo)
+        console.log(res)
+
+        function baz(name, age, height) {
+            console.log(name)
+            console.log(age)
+            return 1
+            console.log(height)
+        }
+        baz("Plaso", 12, 1.77)
+        //语法糖，有点甜头
+        //此处优化数字显示，便于观看0及其个数
+        function formatCount(count) {
+            var fmtCount = 0
+            if (count > 10_0000_0000) {
+                fmtCount = Math.floor(count / 1_0000_0000) + "亿"
+            }
+            else if (count > 10_0000) {
+                fmtCount = Math.floor(count / 1_0000) + "万"
+            } else {
+                fmtCount = count
+            }
+            console.log(arguments)
+            //arguments实参包含函数的此次传入的参数
+            return fmtCount
+
+        }
+
+        console.log(formatCount(11111111111111))
+
+    </script>
+</body>
+
+</html>
