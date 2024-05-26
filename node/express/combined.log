@@ -1,0 +1,4 @@
+{"level":"info","message":"Server started on port 3000"}
+{"level":"info","message":"[2024-05-26T03:22:35.494Z] GET /home"}
+{"level":"info","message":"[2024-05-26T03:22:35.519Z] GET /favicon.ico"}
+{"level":"info","message":"[2024-05-26T03:22:45.700Z] GET /unknown"}

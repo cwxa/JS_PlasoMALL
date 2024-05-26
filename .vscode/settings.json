@@ -1,0 +1,5 @@
+{
+    "Lingma.cloudModelAutoTriggerDisplayRule": true,
+    "Lingma.cloudModelAutoTriggerGenerateLength": "long",
+    "Lingma.cloudModelManualTriggerGenerateLength": "long"
+}

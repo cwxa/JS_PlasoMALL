@@ -1,23 +1,23 @@
 const express = require("express");
 const fs = require('fs');
 const path = require('path');
-
-// 创建一个express应用
+const config = require('./config'); // 引入配置管理模块
+const logger = require('./logger'); // 引入日志模块
 const app = express();
 
 // 使用try-catch监听启动异常
 try {
-    app.listen(80, () => {
-        console.log("启动成功");
+    app.listen(config.port, () => {
+        logger.info(`Server started on port ${config.port}`);
     });
 } catch (error) {
-    console.error("启动失败:", error);
+    logger.error(`Server startup failed: ${error}`);
     process.exit(1);
 }
 
 // 日志记录中间件
 const logRequest = (req, res, next) => {
-    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+    logger.info(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
     next();
 };
 app.use(logRequest);
@@ -40,8 +40,7 @@ app.post("/login", (req, res) => {
 
 // 错误处理中间件
 app.use((err, req, res, next) => {
-    console.error(err.stack);
+    logger.error(`Error handling middleware: ${err.stack}`);
     res.status(500).send('Something broke!');
-});const request = require('supertest');
-const app = require('./app'); // 导入app实例
-
+});
+module.exports = app;
